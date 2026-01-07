@@ -56,3 +56,27 @@ def dcd_to_xtc(pdb_file:str, dcd_file:str) -> None:
         print("One of the file does not exits. Please check again.")
         return None
 
+
+# Check if simulation has produced the number of frames that you were hoping for
+
+def frame_num_check(mda_universe:mda.Universe, expecting_num:int) -> bool:
+    """
+    Checks the number of frames in the simulation
+    
+    :param mda_universe: Universe from MDAnalysis
+    :type mda_universe: mda.Universe
+
+    :param expecting_num: Number of frames
+    :type expecting_num: int
+    
+    :return: If the simulation has same of number of frames as you were expecting
+    :rtype: bool
+    """
+    
+    u = mda_universe
+    num_frames = u.trajectory.n_frames
+
+    if num_frames == expecting_num:
+        return True
+    else:
+        return False
