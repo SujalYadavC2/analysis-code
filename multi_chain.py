@@ -36,8 +36,8 @@ def density_profile(targets:dict, start:int=None, stop:int=None, step:int=1):
     bin_vol_nm3 = box_x * box_y * dz
 
 
-    NA = 6.022e23
-    molar_factor = 1e27 / NA
+    na = 6.022e23
+    molar_factor = 1e27 / na
 
     store_densities = {}
     for name, hists in store_hists.items():
