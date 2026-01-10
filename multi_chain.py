@@ -13,7 +13,7 @@ def density_profile(targets:dict, start:int=None, stop:int=None, step:int=1):
     dz = box_z/n_bins #nm
 
     bins = np.linspace(0, box_z, n_bins + 1)
-    z_centers = ((bins[:-1] + bins[1:]) /2)*0.1 #nm
+    z_centers = ((bins[:-1] + bins[1:]) /2) #nm
 
     store_hists = {}
     for name, target in targets.items():
